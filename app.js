@@ -6,8 +6,8 @@ const btnReset = document.querySelector('.b3');
 const cycles = document.querySelector('h2');
 
 
-let tempsInitial = 3;   // 1800 / 60sec = 30min
-let tempsDeRepos = 3;
+let tempsInitial = 1800;   // 1800 / 60sec = 30min
+let tempsDeRepos = 300;
 let checkInterval = false;
 let pause = false;
 let nbDeCycles = 0;
@@ -42,8 +42,8 @@ btnGo.addEventListener('click', () => {
             }
             
             else if (pause === false && tempsDeRepos === 0 && tempsInitial === 0) {     // Ordre des conditions important
-                tempsInitial = 3;
-                tempsDeRepos = 3;
+                tempsInitial = 1800;
+                tempsDeRepos = 300;
                 nbDeCycles++;
                 cycles.innerText = `Nombre de cycles ${nbDeCycles}`;
 
@@ -65,8 +65,8 @@ btnGo.addEventListener('click', () => {
         btnReset.addEventListener('click', () => {
             clearInterval(timer);
             checkInterval = false;
-            tempsInitial = 3;
-            tempsDeRepos = 3;
+            tempsInitial = 1800;
+            tempsDeRepos = 300;
             nbDeCycles = 0;
             cycles.innerText = `Nombre de cycles ${nbDeCycles}`;
 
